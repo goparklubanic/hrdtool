@@ -70,7 +70,7 @@
                         <label class="visually-hidden" for="inlineFormSelectPref">Set To</label>
                         <div class="input-group">
                             <div class="input-group-text">Set To</div>
-                            <select class="form-select" name="JamMasuk" id="checkin_time">
+                            <select class="form-select" name="JamMasuk" id="checkin_time" @disabled(true)>
                               <option selected>Choose...</option>
                               <option value="07:25:00">07:25:00</option>n>
                               <option value="07:55:00">07:55:00</option>n>
@@ -78,7 +78,7 @@
                         </div>
                       </div>
                       <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button @disabled(true) type="submit" class="btn btn-primary">Update</button>
                       </div>
                     </form>
                   </div>

@@ -60,7 +60,15 @@ class HrdController extends Controller
         $bagian = [];
 
         foreach ($data as $d) {
-            $bagian[$d->NamaBagian][] = $d;
+            // if $d->NamaBagian contain "BLD 2"
+            if (strpos($d->NamaBagian, 'BLD 2') !== false) {
+                // $d->NamaBagian = 'BLD 2';
+                if ($d->JamMasuk > "07:55:00") {
+                    $bagian[$d->NamaBagian][] = $d;
+                }
+            } else {
+                $bagian[$d->NamaBagian][] = $d;
+            }
         }
         return view('comelate', ['data' => $bagian]);
     }
